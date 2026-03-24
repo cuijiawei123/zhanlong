@@ -1,0 +1,1 @@
+pyinstaller --windowed --add-data "images;images" --add-data "model;model" --add-data "utils;utils"  --icon "app_icon.ico" main.py
