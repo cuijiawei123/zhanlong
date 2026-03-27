@@ -1,0 +1,16 @@
+{
+  "name": "zhanlong",
+  "version": "1.0.0",
+  "description": "斩龙 · 语音宏配置器",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}

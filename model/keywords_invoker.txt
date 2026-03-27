@@ -1,10 +1,65 @@
-x iǎo j iàn p án sh ù zh ì y ī @小键盘数字一
-āi f ū sh í y ī @f11
-sh uāng j ī k òng g é @双击空格
-f ù zh ì @复制
-t iào @跳
-zh àn t iē @粘贴
-j iǎn q iè @剪切
-q uán x uǎn @全选
-c ái @踩
-d iàn d ēng @点灯
+x iǎo j iàn p án sh ù zh ì y ī @小键盘数字一 :0.15
+x iǎo j iàng p án sh ù zh ì y ī @小键盘数字一_v1 :0.30
+x iǎo j iàn p áng sh ù zh ì y ī @小键盘数字一_v2 :0.30
+x iǎo j iàn p án s ù zh ì y ī @小键盘数字一_v3 :0.30
+x iǎo j iàn p án sh ù z ì y ī @小键盘数字一_v4 :0.30
+āi f ū sh í y ī @f11 :0.15
+āi h ū sh í y ī @f11_v1 :0.30
+āi f ū s í y ī @f11_v2 :0.30
+sh uāng j ī k òng g é @双击空格 :0.15
+s uāng j ī k òng g é @双击空格_v1 :0.30
+sh uāng j ī k ùn g é @双击空格_v2 :0.30
+f ù zh ì @复制 :0.25
+h ù zh ì @复制_v1 :0.30
+f ū zh ì @复制_v2 :0.30
+f ú zh ì @复制_v3 :0.30
+f ǔ zh ì @复制_v4 :0.30
+f ù z ì @复制_v5 :0.30
+t @跳 :0.63
+zh àn t iē @粘贴 :0.25
+z àn t iē @粘贴_v1 :0.30
+zh àng t iē @粘贴_v2 :0.30
+zh ān t iē @粘贴_v3 :0.30
+zh án t iē @粘贴_v4 :0.30
+zh ǎn t iē @粘贴_v5 :0.30
+j iǎn q iè @剪切 :0.25
+j iǎng q iè @剪切_v1 :0.30
+j iān q iè @剪切_v2 :0.30
+j ián q iè @剪切_v3 :0.30
+j iàn q iè @剪切_v4 :0.30
+j iǎn q iē @剪切_v5 :0.30
+q uán x uǎn @全选 :0.25
+q uān x uǎn @全选_v1 :0.30
+q uǎn x uǎn @全选_v2 :0.30
+q uàn x uǎn @全选_v3 :0.30
+q uán x uān @全选_v4 :0.30
+q uán x uán @全选_v5 :0.30
+c ái @踩 :0.35
+ch ái @踩_v1 :0.40
+c āi @踩_v2 :0.40
+c ǎi @踩_v3 :0.40
+c ài @踩_v4 :0.40
+d iàn d ēng @点灯 :0.25
+d iàng d ēng @点灯_v1 :0.30
+d iān d ēng @点灯_v2 :0.30
+d ián d ēng @点灯_v3 :0.30
+d iǎn d ēng @点灯_v4 :0.30
+d iàn d ēn @点灯_v5 :0.30
+t ǐng y ǒu d @跳刀 :0.15
+t ǐn y ǒu d @跳刀_v1 :0.30
+d à zh āo @大招 :0.25
+d ā zh āo @大招_v1 :0.30
+d á zh āo @大招_v2 :0.30
+d ǎ zh āo @大招_v3 :0.30
+d à z āo @大招_v4 :0.30
+d à zh áo @大招_v5 :0.30
+b iāo j @标记 :0.80
+b iáo j @标记_v1 :0.80
+b iǎo j @标记_v2 :0.80
+b iào j @标记_v3 :0.80
+h ā h @哈哈哈 :0.25
+f ā h @哈哈哈_v1 :0.30
+h á h @哈哈哈_v2 :0.30
+h ǎ h @哈哈哈_v3 :0.30
+h à h @哈哈哈_v4 :0.30
+h ā f @哈哈哈_v5 :0.30
