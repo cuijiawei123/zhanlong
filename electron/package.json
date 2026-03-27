@@ -55,12 +55,12 @@
     },
     "mac": {
       "target": ["dmg"],
-      "icon": "../app_icon.ico",
+      "icon": "../app_icon.png",
       "category": "public.app-category.utilities"
     },
     "linux": {
       "target": ["AppImage"],
-      "icon": "../app_icon.ico",
+      "icon": "../app_icon.png",
       "category": "Utility"
     }
   },

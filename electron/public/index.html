@@ -266,51 +266,52 @@ body{background:#131315;color:#e5e1e4;font-family:'Inter',sans-serif;overflow:hi
 </div>
 
 <!-- ═══════════ 欢迎/关于 覆盖层（首次启动展示） ═══════════ -->
-<div id="welcome-overlay" class="fixed inset-0 z-40 bg-surface overflow-y-auto scrollbar-thin" style="display:none;">
-  <div class="max-w-4xl mx-auto px-8 py-12 space-y-8">
-    <div class="text-center space-y-2 mb-6">
-      <div class="flex items-center justify-center gap-3 mb-4">
-        <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings:'FILL' 1">adb</span>
-      </div>
-      <h2 class="text-5xl font-headline font-bold tracking-tighter text-on-surface" data-i18n="about_title">关于 斩龙</h2>
+<div id="welcome-overlay" class="fixed inset-0 z-40 bg-surface flex flex-col" style="display:none;">
+  <div class="flex-1 flex flex-col justify-center max-w-4xl w-full mx-auto px-8 py-4 gap-4">
+    <!-- 标题 -->
+    <div class="text-center flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1">adb</span>
+      <h2 class="text-3xl font-headline font-bold tracking-tighter text-on-surface" data-i18n="about_title">关于 斩龙</h2>
       <p class="text-on-surface-variant font-label text-[10px] uppercase tracking-widest opacity-60">Version 2.4.0</p>
     </div>
 
-    <div class="bg-surface-container-low rounded-xl p-6 border-l-4 border-secondary">
-      <div class="flex items-start gap-4">
-        <span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings:'FILL' 1">report</span>
+    <!-- 免责声明 -->
+    <div class="bg-surface-container-low rounded-lg p-4 border-l-4 border-secondary">
+      <div class="flex items-start gap-3">
+        <span class="material-symbols-outlined text-secondary text-xl mt-0.5" style="font-variation-settings:'FILL' 1">report</span>
         <div>
-          <h3 class="font-headline font-bold text-lg text-secondary mb-2 tracking-tight" data-i18n="disclaimer_title">免责声明</h3>
-          <p class="text-on-surface leading-relaxed text-sm" data-i18n="disclaimer_body">本工具仅限学习娱乐交流。使用宏可能被部分反作弊系统检测，<span class="font-bold underline decoration-secondary decoration-2 underline-offset-4">风险由用户自行承担</span>。我们提倡绿色游戏环境。</p>
+          <h3 class="font-headline font-bold text-sm text-secondary mb-1 tracking-tight" data-i18n="disclaimer_title">免责声明</h3>
+          <p class="text-on-surface leading-relaxed text-xs" data-i18n="disclaimer_body">本工具仅限学习娱乐交流。使用宏可能被部分反作弊系统检测，<span class="font-bold underline decoration-secondary decoration-2 underline-offset-4">风险由用户自行承担</span>。我们提倡绿色游戏环境。</p>
         </div>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-5">
-      <div class="bg-surface-container rounded-xl p-6">
-        <div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-primary">groups</span><h3 class="font-headline font-bold tracking-tight" data-i18n="community_title">社区交流</h3></div>
-        <div class="space-y-3">
-          <div><label class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block" data-i18n="qq_player">QQ玩家群</label><div class="bg-surface-container-lowest p-3 rounded-lg text-sm border border-outline-variant/20">1070936439</div></div>
-          <div><label class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block" data-i18n="qq_dev">QQ开发群</label><div class="bg-surface-container-lowest p-3 rounded-lg text-sm border border-outline-variant/20">810385945</div></div>
-          <div><label class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block" data-i18n="video_channel">视频号</label><div class="bg-surface-container-lowest p-3 rounded-lg text-sm flex items-center gap-2 border border-outline-variant/20"><span class="material-symbols-outlined text-secondary text-sm">smart_display</span>乖宝喵呜呜</div></div>
+    <!-- 两栏信息 -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-surface-container rounded-lg p-4">
+        <div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-primary text-lg">groups</span><h3 class="font-headline font-bold text-sm tracking-tight" data-i18n="community_title">社区交流</h3></div>
+        <div class="space-y-2">
+          <div><label class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-0.5 block" data-i18n="qq_player">QQ玩家群</label><div class="bg-surface-container-lowest p-2 rounded text-xs border border-outline-variant/20">1070936439</div></div>
+          <div><label class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-0.5 block" data-i18n="qq_dev">QQ开发群</label><div class="bg-surface-container-lowest p-2 rounded text-xs border border-outline-variant/20">810385945</div></div>
+          <div><label class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-0.5 block" data-i18n="video_channel">视频号</label><div class="bg-surface-container-lowest p-2 rounded text-xs flex items-center gap-2 border border-outline-variant/20"><span class="material-symbols-outlined text-secondary text-sm">smart_display</span>乖宝喵呜呜</div></div>
         </div>
       </div>
-      <div class="bg-surface-container-high rounded-xl p-6">
-        <div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-secondary">coffee</span><h3 class="font-headline font-bold tracking-tight" data-i18n="support_title">支持作者</h3></div>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-4" data-i18n="support_desc">如果觉得有用，欢迎请作者喝杯奶茶 ❤️</p>
+      <div class="bg-surface-container-high rounded-lg p-4">
+        <div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-secondary text-lg">coffee</span><h3 class="font-headline font-bold text-sm tracking-tight" data-i18n="support_title">支持作者</h3></div>
+        <p class="text-xs text-on-surface-variant leading-relaxed mb-3" data-i18n="support_desc">如果觉得有用，欢迎请作者喝杯奶茶 ❤️</p>
         <div class="flex gap-3">
-          <div class="flex-1 bg-surface-container-lowest rounded-xl p-3 text-center border border-outline-variant/20"><div class="text-on-surface-variant text-xs mb-2" data-i18n="wechat_pay">微信支付</div><div class="text-[10px] text-outline" data-i18n="local_image">（本地图片）</div></div>
-          <div class="flex-1 bg-surface-container-lowest rounded-xl p-3 text-center border border-outline-variant/20"><div class="text-on-surface-variant text-xs mb-2" data-i18n="alipay">支付宝</div><div class="text-[10px] text-outline" data-i18n="local_image">（本地图片）</div></div>
+          <div class="flex-1 bg-surface-container-lowest rounded-lg p-2.5 text-center border border-outline-variant/20"><div class="text-on-surface-variant text-xs mb-1" data-i18n="wechat_pay">微信支付</div><div class="text-[10px] text-outline" data-i18n="local_image">（本地图片）</div></div>
+          <div class="flex-1 bg-surface-container-lowest rounded-lg p-2.5 text-center border border-outline-variant/20"><div class="text-on-surface-variant text-xs mb-1" data-i18n="alipay">支付宝</div><div class="text-[10px] text-outline" data-i18n="local_image">（本地图片）</div></div>
         </div>
       </div>
     </div>
 
     <!-- 进入主界面按钮 -->
-    <div class="text-center pt-4">
-      <button onclick="dismissWelcome()" class="bg-gradient-to-r from-primary-container to-surface-container-highest text-primary px-16 py-4 rounded-xl font-headline font-bold tracking-[0.15em] text-base uppercase shadow-xl hover:shadow-primary/20 transition-all active:scale-95 border border-primary/20" data-i18n="launch_btn">进入主界面</button>
+    <div class="text-center pt-2">
+      <button onclick="dismissWelcome()" class="bg-gradient-to-r from-primary-container to-surface-container-highest text-primary px-12 py-3 rounded-xl font-headline font-bold tracking-[0.15em] text-sm uppercase shadow-xl hover:shadow-primary/20 transition-all active:scale-95 border border-primary/20" data-i18n="launch_btn">进入主界面</button>
     </div>
 
-    <p class="text-center text-[10px] text-on-surface-variant/30 uppercase tracking-[0.2em] pt-4">© 2024 斩龙. All Rights Reserved.</p>
+    <p class="text-center text-[10px] text-on-surface-variant/30 uppercase tracking-[0.2em]">© 2024 斩龙. All Rights Reserved.</p>
   </div>
 </div>
 
