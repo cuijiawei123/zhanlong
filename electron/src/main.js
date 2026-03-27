@@ -12,12 +12,16 @@ let pythonProcess = null;
 
 function startPythonBackend() {
   const isDev = process.argv.includes('--dev');
-  const projectRoot = path.resolve(__dirname, '..', '..');
+  const fs = require('fs');
 
-  let cmd, args;
+  let cmd, args, cwd;
+
   if (isDev) {
+    // ── 开发模式：用源码运行 ──
+    const projectRoot = path.resolve(__dirname, '..', '..');
+    cwd = projectRoot;
+
     // 优先使用 venv
-    const fs = require('fs');
     const venvPython = path.join(projectRoot, '.venv', 'bin', 'python');
     const venvPythonWin = path.join(projectRoot, '.venv', 'Scripts', 'python.exe');
     if (fs.existsSync(venvPython)) {
@@ -29,7 +33,19 @@ function startPythonBackend() {
     }
     args = [path.join(projectRoot, 'backend.py')];
   } else {
-    const exePath = path.join(process.resourcesPath, 'backend', 'backend.exe');
+    // ── 生产模式：运行 PyInstaller 打包的后端 ──
+    const backendDir = path.join(process.resourcesPath, 'backend');
+    cwd = backendDir;
+
+    // 跨平台：Windows 是 backend.exe，macOS/Linux 是 backend（无后缀）
+    const exeName = process.platform === 'win32' ? 'backend.exe' : 'backend';
+    const exePath = path.join(backendDir, exeName);
+
+    if (!fs.existsSync(exePath)) {
+      console.error(`[Main] Backend executable not found: ${exePath}`);
+      return;
+    }
+
     cmd = exePath;
     args = [];
   }
@@ -37,7 +53,7 @@ function startPythonBackend() {
   console.log(`[Main] Starting Python backend: ${cmd} ${args.join(' ')}`);
 
   pythonProcess = spawn(cmd, args, {
-    cwd: projectRoot,
+    cwd: cwd,
     stdio: ['pipe', 'pipe', 'pipe']
   });
 
@@ -49,6 +65,11 @@ function startPythonBackend() {
     console.error(`[Python ERR] ${data.toString().trim()}`);
   });
 
+  pythonProcess.on('error', (err) => {
+    console.error(`[Main] Failed to start backend: ${err.message}`);
+    pythonProcess = null;
+  });
+
   pythonProcess.on('close', (code) => {
     console.log(`[Main] Python process exited with code ${code}`);
     pythonProcess = null;
@@ -57,7 +78,16 @@ function startPythonBackend() {
 
 function stopPythonBackend() {
   if (pythonProcess) {
-    pythonProcess.kill();
+    // Windows 上 kill() 发 SIGTERM 可能无效，用 taskkill 确保关闭
+    if (process.platform === 'win32') {
+      try {
+        require('child_process').execSync(`taskkill /pid ${pythonProcess.pid} /T /F`, { stdio: 'ignore' });
+      } catch (e) {
+        // 进程可能已退出
+      }
+    } else {
+      pythonProcess.kill();
+    }
     pythonProcess = null;
   }
 }

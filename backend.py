@@ -15,13 +15,7 @@ from utils.config_manager import ConfigManager
 from utils.voice_engine import start_recording, stop_and_get_result
 from utils.voice_listener import VoiceListener
 
-try:
-    import websockets
-except ImportError:
-    print("[Backend] Installing websockets...")
-    import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "websockets", "-q"])
-    import websockets
+import websockets
 
 
 # ==========================================
